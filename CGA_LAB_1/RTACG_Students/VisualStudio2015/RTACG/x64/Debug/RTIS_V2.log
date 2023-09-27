@@ -1,0 +1,22 @@
+﻿  camera.cpp
+  ortographic.cpp
+  perspective.cpp
+  bitmap.cpp
+  eqsolver.cpp
+  film.cpp
+  intersection.cpp
+  matrix4x4.cpp
+  ray.cpp
+  tester.cpp
+  utils.cpp
+  vector3d.cpp
+  pointlightsource.cpp
+  main.cpp
+  material.cpp
+  intersectionshader.cpp
+  shader.cpp
+  infiniteplan.cpp
+  shape.cpp
+  sphere.cpp
+  Generating Code...
+  RTIS_V2.vcxproj -> C:\Users\u137471\Desktop\Courses UPF\Advanced Computer Graphics\2023-24\Lab1\RTACG_Students\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe
