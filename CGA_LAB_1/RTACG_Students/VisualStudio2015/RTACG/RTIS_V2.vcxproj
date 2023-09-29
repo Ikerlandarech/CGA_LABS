@@ -163,6 +163,7 @@
     <ClCompile Include="..\..\src\shapes\infiniteplan.cpp" />
     <ClCompile Include="..\..\src\shapes\shape.cpp" />
     <ClCompile Include="..\..\src\shapes\sphere.cpp" />
+    <ClCompile Include="depthshader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\cameras\camera.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="..\..\src\core\vector3d.h" />
     <ClInclude Include="..\..\src\lightsources\pointlightsource.h" />
     <ClInclude Include="..\..\src\materials\material.h" />
+    <ClInclude Include="..\..\src\shaders\depthshader.h" />
     <ClInclude Include="..\..\src\shaders\intersectionshader.h" />
     <ClInclude Include="..\..\src\shaders\shader.h" />
     <ClInclude Include="..\..\src\shapes\infiniteplan.h" />

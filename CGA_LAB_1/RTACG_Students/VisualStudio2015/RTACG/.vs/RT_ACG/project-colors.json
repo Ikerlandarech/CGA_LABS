@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ee03a110-7735-41d4-b6a3-a3801c61b3eb": {
+      "ProjectGuid": "ee03a110-7735-41d4-b6a3-a3801c61b3eb",
+      "DisplayName": "RT_ACG",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

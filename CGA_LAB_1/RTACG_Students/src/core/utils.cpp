@@ -16,36 +16,27 @@ Vector3D Utils::multiplyPerCanal(const Vector3D &v1, const Vector3D &v2)
 
 bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList) //or Shadow Ray
 {
-    std::cout << "Need to implement the function Utils::hasIntersection() in the file utils.cpp" << std::endl;
+    bool resultIntersection = false;
+    //std::cout << "Need to implement the function Utils::hasIntersection() in the file utils.cpp" << std::endl;
+    for(size_t objIndex = 0; objIndex < objectsList.size(); objIndex ++)
+    {
+          // Get the current object
+          const Shape *obj = objectsList.at(objIndex);
 
-    // Write your code bellow
-    // (...)
-    //
-    // For each object on the scene...
-    //for(size_t objIndex = 0; objIndex < objectsList.size(); objIndex ++)
-    //{
-    //      // Get the current object
-    //      const Shape *obj = objectsList.at(objIndex);
-    //      (...)
-    //}
-    //
-    // (...)
-    //
-
-    return false;
+          bool intersection = obj->rayIntersectP(cameraRay);
+          if (intersection == true)
+          {
+              resultIntersection = true;
+          }
+    }    
+    return resultIntersection;
 }
-
 
 
 bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its) //or Closest Hit Ray
 {
-    std::cout << "Need to implement the function Utils::getClosestIntersection() in the file utils.cpp" << std::endl;
-
-    //
-    // Write your code bellow
-    //
-    // (...)
-    //
+    //std::cout << "Need to implement the function Utils::getClosestIntersection() in the file utils.cpp" << std::endl;
+    
 
     return false;
 }
