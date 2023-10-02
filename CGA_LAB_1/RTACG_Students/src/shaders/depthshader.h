@@ -16,6 +16,7 @@ public:
 
 private:
     double maxDist;
+    Vector3D hitColor;
     Vector3D color;
 };
 

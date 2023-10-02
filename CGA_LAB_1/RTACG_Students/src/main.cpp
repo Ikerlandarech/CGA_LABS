@@ -169,12 +169,16 @@ int main()
     film = new Film(720, 512);
 
 
-    // Declare the shader
+    // Declare the Intersection Shader
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
     Vector3D intersectionColor(1,0,0);
+
+    // Declare the Depth Shader
+    Vector3D depthColor(1, 0, 0);
     
-    Shader *shader = new IntersectionShader (intersectionColor, bgColor);
-  
+    Shader *intShader = new IntersectionShader (intersectionColor, bgColor);
+    Shader *depthShader = new IntersectionShader(depthColor, bgColor);
+
 
     // Build the scene---------------------------------------------------------
     // 
@@ -192,9 +196,9 @@ int main()
 
     // Launch some rays! TASK 2,3,...
     // 
-    raytrace(cam, shader, film, objectsList, lightSourceList);
+    //raytrace(cam, intShader, film, objectsList, lightSourceList);
+    raytrace(cam, depthShader, film, objectsList, lightSourceList);
 
-    
 
     // Save the final result to file
     std::cout << "\n\nSaving the result to file output.bmp\n" << std::endl;

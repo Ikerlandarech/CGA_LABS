@@ -16,29 +16,53 @@ Vector3D Utils::multiplyPerCanal(const Vector3D &v1, const Vector3D &v2)
 
 bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList) //or Shadow Ray
 {
-    bool resultIntersection = false;
+    //bool resultIntersection = false;
+    bool intersection = false;
     //std::cout << "Need to implement the function Utils::hasIntersection() in the file utils.cpp" << std::endl;
     for(size_t objIndex = 0; objIndex < objectsList.size(); objIndex ++)
     {
           // Get the current object
           const Shape *obj = objectsList.at(objIndex);
 
-          bool intersection = obj->rayIntersectP(cameraRay);
+          intersection = obj->rayIntersectP(cameraRay);
           if (intersection == true)
           {
-              resultIntersection = true;
+            return intersection;
           }
-    }    
-    return resultIntersection;
+    }
+    return intersection;
 }
 
+//Intersection Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its) //or Closest Hit Ray
+//{
+//    bool rayInters = false;
+//    for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
+//    {
+//        const Shape* obj = objectsList.at(objIndex);
+//        Intersection intersection;
+//        rayInters = obj->rayIntersect(cameraRay, its);
+//        if (rayInters == true)
+//        {
+//            return its;
+//        }
+//    }
+//    return its;
+//}
 
 bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its) //or Closest Hit Ray
 {
-    //std::cout << "Need to implement the function Utils::getClosestIntersection() in the file utils.cpp" << std::endl;
-    
-
-    return false;
+    bool rayInters = false;
+    for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
+    {
+        const Shape* obj = objectsList.at(objIndex);
+        Intersection intersection;
+        rayInters = obj->rayIntersect(cameraRay, its);
+        if (rayInters == true)
+        {
+            return rayInters;
+        }
+    }
+    return rayInters;
 }
 
 double interpolate(double val, double y0, double x0, double y1, double x1 )
