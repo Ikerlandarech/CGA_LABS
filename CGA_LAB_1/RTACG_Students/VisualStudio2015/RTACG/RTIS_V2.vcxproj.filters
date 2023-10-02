@@ -96,7 +96,7 @@
     <ClCompile Include="..\..\src\shapes\sphere.cpp">
       <Filter>src\shapes</Filter>
     </ClCompile>
-    <ClCompile Include="depthshader.cpp">
+    <ClCompile Include="..\..\src\shaders\depthshader.cpp">
       <Filter>src\shaders</Filter>
     </ClCompile>
   </ItemGroup>

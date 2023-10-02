@@ -5,19 +5,25 @@ DepthShader::DepthShader() :
     color(Vector3D(1, 0, 0))
 { }
 
-DepthShader::DepthShader(Vector3D hitColor_, double maxDist_ Vector3D bgColor_) :
+DepthShader::DepthShader(Vector3D hitColor_, double maxDist_, Vector3D bgColor_) :
     Shader(bgColor_), color(hitColor_), maxDist(maxDist_)
 { }
 
-Vector3D DepthShader::computeColor(const Ray &r, const std::vector<Shape*> &objList, const std::vector<PointLightSource> &lsList) const
+Vector3D DepthShader::computeColor(const Ray& r, const std::vector<Shape*>& objList, const std::vector<PointLightSource>& lsList) const
 {
-    if (Utils::hasIntersection(r, objList))
-        double ci = 1 - Utils::getClosestIntersection(r, objList, ) / maxDist;
-        if (ci < 0) {
-            ci = 0;
-        }
-    return Vector3D(ci,ci,ci);
+    double ci{};
+    Intersection intersection;
+    Utils::getClosestIntersection(r, objList, intersection);
+    double hitDist = sqrt(pow(intersection.itsPoint.x - r.o.x, 2) + pow(intersection.itsPoint.y - r.o.y, 2));
 
-    else
-        return bgColor;
+    if (Utils::hasIntersection(r, objList))
+        ci = 1.0 - (hitDist / maxDist);
+        if (ci < 0.0) {
+            ci = 0.0;
+        }
+        return Vector3D(0, ci, 0);
+        
+    return bgColor;
 }
+
+

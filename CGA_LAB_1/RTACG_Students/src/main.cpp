@@ -172,13 +172,13 @@ int main()
     // Declare the Intersection Shader
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
     Vector3D intersectionColor(1,0,0);
+    double maxDist = 1;
 
     // Declare the Depth Shader
     Vector3D depthColor(1, 0, 0);
     
     Shader *intShader = new IntersectionShader (intersectionColor, bgColor);
-    Shader *depthShader = new IntersectionShader(depthColor, bgColor);
-
+    Shader* depthShader = new DepthShader(depthColor, maxDist, bgColor);
 
     // Build the scene---------------------------------------------------------
     // 
