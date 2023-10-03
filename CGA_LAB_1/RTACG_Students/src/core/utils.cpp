@@ -112,20 +112,20 @@ bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& obj
 
 bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its)
 {
-    double minDist = 99999999;
+    const Shape* obj = objectsList.at(0);
+    Intersection intersection;
 
     for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
     {
         const Shape* obj = objectsList.at(objIndex);
-        Intersection intersection;
+        
         if (obj->rayIntersect(cameraRay, intersection))
         {
-            double dist = sqrt(pow(intersection.itsPoint.x - cameraRay.o.x, 2) + pow(intersection.itsPoint.y - cameraRay.o.y, 2));
-            if (dist < minDist)
-            {
-                minDist = dist;
-                its = intersection;
-            }
+            return true
+        }
+        if ((intersection.itsPoint - cameraRay.o).length() <(its.itsPoint - cameraRay.o).length())
+        {
+            its = intersection
         }
     }
     return false;
