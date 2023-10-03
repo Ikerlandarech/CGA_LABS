@@ -1,4 +1,3 @@
 C:\Users\MSI-GE66\Desktop\SUMMER\ACG\2019_2020_Imatge_Sintetica-001\2019_2020_Imatge_Sintetica\Code\auxiliar\ACG_Framework_Lab1\RTACG_Students_V2_2018\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe
 C:\Users\u137471\Desktop\Courses UPF\Advanced Computer Graphics\2023-24\Lab1\RTACG_Students\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe
-C:\Users\ikerl\Documents\Github\CGA_LABS\CGA_LAB_1\RTACG_Students\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe
+\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe

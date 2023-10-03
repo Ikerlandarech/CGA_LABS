@@ -1,4 +1,28 @@
-﻿  utils.cpp
+﻿  camera.cpp
+  ortographic.cpp
+  perspective.cpp
+  bitmap.cpp
+  eqsolver.cpp
+  film.cpp
+  intersection.cpp
+  matrix4x4.cpp
+  ray.cpp
+  tester.cpp
+  utils.cpp
+\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\core\utils.cpp(78,9): error C2143: error de sintaxis: falta ';' delante de '}'
+\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\core\utils.cpp(82,9): error C2143: error de sintaxis: falta ';' delante de '}'
+  vector3d.cpp
+  pointlightsource.cpp
+  main.cpp
+\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\shaders\depthshader.h(5,10): fatal  error C1083: No se puede abrir el archivo incluir: 'Vector3d.h': No such file or directory
+  material.cpp
   depthshader.cpp
-  Generating Code...
-  RTIS_V2.vcxproj -> C:\Users\ikerl\Documents\Github\CGA_LABS\CGA_LAB_1\RTACG_Students\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe
+\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\shaders\depthshader.h(5,10): fatal  error C1083: No se puede abrir el archivo incluir: 'Vector3d.h': No such file or directory
+  intersectionshader.cpp
+  shader.cpp
+  infiniteplan.cpp
+  shape.cpp
+  Generando código...
+  Compilando...
+  sphere.cpp
+  Generando código...

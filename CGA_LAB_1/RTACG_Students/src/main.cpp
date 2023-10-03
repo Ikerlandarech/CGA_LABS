@@ -151,9 +151,9 @@ void PaintImage(Film* film)
 
         for (size_t col = 0; col < resX; col++)
         {
-            Vector3D pixel_color = Vector3D((double)col/resX, (double)lin/resY, 0);
-            film->setPixelValue(col,lin, pixel_color);
-           
+            Vector3D pixel_color = Vector3D((double)col / resX, (double)lin / resY, 0);
+            film->setPixelValue(col, lin, pixel_color);
+
         }
     }
 }
@@ -168,17 +168,21 @@ int main()
     Film *film;
     film = new Film(720, 512);
 
-
     // Declare the Intersection Shader
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
-    Vector3D intersectionColor(1,0,0);
+    Vector3D intersectionColor(1, 0, 0);
     double maxDist = 1;
 
+    // Declare the shader
+    //Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
+    //Vector3D intersectionColor(1,0,0);
+    
     // Declare the Depth Shader
     Vector3D depthColor(1, 0, 0);
-    
-    Shader *intShader = new IntersectionShader (intersectionColor, bgColor);
+
+    Shader* intShader = new IntersectionShader(intersectionColor, bgColor);
     Shader* depthShader = new DepthShader(depthColor, maxDist, bgColor);
+
 
     // Build the scene---------------------------------------------------------
     // 
@@ -196,9 +200,10 @@ int main()
 
     // Launch some rays! TASK 2,3,...
     // 
-    //raytrace(cam, intShader, film, objectsList, lightSourceList);
+    //raytrace(cam, shader, film, objectsList, lightSourceList);
     raytrace(cam, depthShader, film, objectsList, lightSourceList);
 
+    
 
     // Save the final result to file
     std::cout << "\n\nSaving the result to file output.bmp\n" << std::endl;
