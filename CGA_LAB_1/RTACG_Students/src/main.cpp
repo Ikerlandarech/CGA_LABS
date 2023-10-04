@@ -16,6 +16,7 @@
 
 #include "shaders/intersectionshader.h"
 #include "shaders/depthshader.h"
+#include "shaders/normalshader.h"
 
 
 
@@ -171,13 +172,14 @@ int main()
     // Declare the Intersection Shader
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
     Vector3D intersectionColor(1, 0, 0);
-    double maxDist = 9999;
+    double maxDist = 8;
     
     // Declare the Depth Shader
     Vector3D depthColor(1, 0, 0);
 
-    Shader* intShader = new IntersectionShader(intersectionColor, bgColor);
-    Shader* depthShader = new DepthShader(depthColor, maxDist, bgColor);
+    Shader* intShader = new IntersectionShader(intersectionColor, bgColor); //TASK 2
+    Shader* depthShader = new DepthShader(depthColor, maxDist, bgColor); //TASK 3
+    Shader* normalShader = new NormalShader(depthColor, maxDist, bgColor); //TASK 4
 
 
     // Build the scene---------------------------------------------------------
@@ -196,8 +198,9 @@ int main()
 
     // Launch some rays! TASK 2,3,...
     // 
-    //raytrace(cam, shader, film, objectsList, lightSourceList);
-    raytrace(cam, depthShader, film, objectsList, lightSourceList);
+    //raytrace(cam, intShader, film, objectsList, lightSourceList); //TASK 2
+    //raytrace(cam, depthShader, film, objectsList, lightSourceList); //TASK 3
+    raytrace(cam, normalShader, film, objectsList, lightSourceList); //TASK 4
 
     
 

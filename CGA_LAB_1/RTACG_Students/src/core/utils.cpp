@@ -20,9 +20,9 @@ bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& obj
     for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
     {
         const Shape* obj = objectsList.at(objIndex);
-        if (intersection = obj->rayIntersectP(cameraRay))
+        if (obj->rayIntersectP(cameraRay))
         {
-            return intersection;
+            intersection = true;
         }
     }
     return intersection;
@@ -30,17 +30,17 @@ bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& obj
 
 bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its)
 {
-    const Shape* obj = objectsList.at(0);
+    bool intersection = false;
     for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
     {
         const Shape* obj = objectsList.at(objIndex);
 
         if (obj->rayIntersect(cameraRay, its))
         {
-            return true;
+            intersection = true;
         }
     }
-    return false;
+    return intersection;
 }
 
 

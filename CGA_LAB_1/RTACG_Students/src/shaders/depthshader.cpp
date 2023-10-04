@@ -35,9 +35,8 @@ Vector3D DepthShader::computeColor(const Ray& r, const std::vector<Shape*>& objL
     Intersection* intersection = new Intersection();
 
     if (Utils::getClosestIntersection(r, objList, *intersection)) {
-        //Computing the hit distance using Euclidean distance formula:
-        //hitDist = (*intersection.itsPoint - r.o).length();
-        ci = 1.0 - (r.maxT / maxDist);
+        hitDist = r.maxT;
+        ci = 1.0 - (hitDist / maxDist);
         if (ci < 0.0) {
             ci = 0.0;
         }
