@@ -62,11 +62,12 @@ bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape
 
         if (obj->rayIntersect(cameraRay, intersection))
         {
+            if ((intersection.itsPoint - cameraRay.o).length() > (its.itsPoint - cameraRay.o).length())
+            {
+                std::cout << "DISTANCE: " << (intersection.itsPoint - cameraRay.o).length() << std::endl;
+                its = intersection;
+            }
             return true;
-        }
-        if ((intersection.itsPoint - cameraRay.o).length() < (its.itsPoint - cameraRay.o).length())
-        {
-            its = intersection;
         }
     }
     return false;

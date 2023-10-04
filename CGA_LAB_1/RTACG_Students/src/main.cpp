@@ -172,10 +172,6 @@ int main()
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
     Vector3D intersectionColor(1, 0, 0);
     double maxDist = 1;
-
-    // Declare the shader
-    //Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
-    //Vector3D intersectionColor(1,0,0);
     
     // Declare the Depth Shader
     Vector3D depthColor(1, 0, 0);

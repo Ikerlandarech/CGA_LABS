@@ -1,12 +1,2 @@
 ﻿  utils.cpp
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,6): error C2065: 'Write': undeclared identifier
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,12): error C2146: syntax error: missing ';' before identifier 'your'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,12): error C2065: 'your': undeclared identifier
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,17): error C2146: syntax error: missing ';' before identifier 'code'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,17): error C2065: 'code': undeclared identifier
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,22): error C2146: syntax error: missing ';' before identifier 'bellow'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,7): error C2143: syntax error: missing ')' before '...'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,22): error C3861: 'bellow': identifier not found
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,7): error C2143: syntax error: missing ';' before '...'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,7): error C2059: syntax error: '...'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,10): error C2059: syntax error: ')'
+  RTIS_V2.vcxproj -> C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\VisualStudio2015\RTACG\x64\Debug\RT_ACG.exe
