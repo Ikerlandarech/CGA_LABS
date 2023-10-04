@@ -14,27 +14,6 @@ Vector3D Utils::multiplyPerCanal(const Vector3D &v1, const Vector3D &v2)
     return Vector3D(0.0);
 }
 
-/*bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList) //or Shadow Ray
-{
-    std::cout << "Need to implement the function Utils::hasIntersection() in the file utils.cpp" << std::endl;
-
-    // Write your code bellow
-    // (...)
-    //
-    // For each object on the scene...
-    //for(size_t objIndex = 0; objIndex < objectsList.size(); objIndex ++)
-    //{
-    //      // Get the current object
-    //      const Shape *obj = objectsList.at(objIndex);
-    //      (...)
-    //}
-    //
-    // (...)
-    //
-
-    return false;
-}
-*/
 bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList) //or Shadow Ray
 {
     bool intersection = false;
@@ -49,29 +28,43 @@ bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& obj
     return intersection;
 }
 
-
-
 bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its)
 {
     const Shape* obj = objectsList.at(0);
-    Intersection intersection;
-
     for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
     {
         const Shape* obj = objectsList.at(objIndex);
 
-        if (obj->rayIntersect(cameraRay, intersection))
+        if (obj->rayIntersect(cameraRay, its))
         {
-            if ((intersection.itsPoint - cameraRay.o).length() > (its.itsPoint - cameraRay.o).length())
-            {
-                std::cout << "DISTANCE: " << (intersection.itsPoint - cameraRay.o).length() << std::endl;
-                its = intersection;
-            }
             return true;
         }
     }
     return false;
 }
+
+
+//bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its)
+//{
+//    const Shape* obj = objectsList.at(0);
+//    Intersection intersection;
+//
+//    for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
+//    {
+//        const Shape* obj = objectsList.at(objIndex);
+//
+//        if (obj->rayIntersect(cameraRay, intersection))
+//        {
+//            if ((intersection.itsPoint - cameraRay.o).length() > (its.itsPoint - cameraRay.o).length())
+//            {
+//                std::cout << "DISTANCE: " << (intersection.itsPoint - cameraRay.o).length() << std::endl;
+//                its = intersection;
+//            }
+//            return true;
+//        }
+//    }
+//    return false;
+//}
 
 double interpolate(double val, double y0, double x0, double y1, double x1 )
 {
