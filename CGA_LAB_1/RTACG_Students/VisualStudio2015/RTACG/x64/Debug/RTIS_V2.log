@@ -1,28 +1,12 @@
-﻿  camera.cpp
-  ortographic.cpp
-  perspective.cpp
-  bitmap.cpp
-  eqsolver.cpp
-  film.cpp
-  intersection.cpp
-  matrix4x4.cpp
-  ray.cpp
-  tester.cpp
-  utils.cpp
-\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\core\utils.cpp(78,9): error C2143: error de sintaxis: falta ';' delante de '}'
-\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\core\utils.cpp(82,9): error C2143: error de sintaxis: falta ';' delante de '}'
-  vector3d.cpp
-  pointlightsource.cpp
-  main.cpp
-\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\shaders\depthshader.h(5,10): fatal  error C1083: No se puede abrir el archivo incluir: 'Vector3d.h': No such file or directory
-  material.cpp
-  depthshader.cpp
-\\Mac\Home\Desktop\UNI\4rd year\1rstTerm\ComputerGraphics2\RTACG_Students\src\shaders\depthshader.h(5,10): fatal  error C1083: No se puede abrir el archivo incluir: 'Vector3d.h': No such file or directory
-  intersectionshader.cpp
-  shader.cpp
-  infiniteplan.cpp
-  shape.cpp
-  Generando código...
-  Compilando...
-  sphere.cpp
-  Generando código...
+﻿  utils.cpp
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,6): error C2065: 'Write': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,12): error C2146: syntax error: missing ';' before identifier 'your'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,12): error C2065: 'your': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,17): error C2146: syntax error: missing ';' before identifier 'code'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,17): error C2065: 'code': undeclared identifier
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,22): error C2146: syntax error: missing ';' before identifier 'bellow'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,7): error C2143: syntax error: missing ')' before '...'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(57,22): error C3861: 'bellow': identifier not found
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,7): error C2143: syntax error: missing ';' before '...'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,7): error C2059: syntax error: '...'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\src\core\utils.cpp(59,10): error C2059: syntax error: ')'

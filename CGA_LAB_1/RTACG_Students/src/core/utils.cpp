@@ -49,19 +49,7 @@ bool Utils::hasIntersection(const Ray& cameraRay, const std::vector<Shape*>& obj
     return intersection;
 }
 
-/*bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its) //or Closest Hit Ray
-{
-    std::cout << "Need to implement the function Utils::getClosestIntersection() in the file utils.cpp" << std::endl;
 
-    //
-    // Write your code bellow
-    //
-    // (...)
-    //
-
-    return false;
-}
-*/
 
 bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its)
 {
@@ -74,11 +62,11 @@ bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape
 
         if (obj->rayIntersect(cameraRay, intersection))
         {
-            return true
+            return true;
         }
         if ((intersection.itsPoint - cameraRay.o).length() < (its.itsPoint - cameraRay.o).length())
         {
-            its = intersection
+            its = intersection;
         }
     }
     return false;
