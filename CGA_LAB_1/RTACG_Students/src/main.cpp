@@ -17,6 +17,8 @@
 #include "shaders/intersectionshader.h"
 #include "shaders/depthshader.h"
 #include "shaders/normalshader.h"
+#include "materials/phong.h"
+#include "shaders/directshader.h"
 
 
 
@@ -40,8 +42,9 @@ void buildSceneSphere(Camera*& cam, Film*& film,
     /* ************************** */
     /* DEFINE YOUR MATERIALS HERE */
     /* ************************** */
-    // (...)
-    //  EXAMPLE:  Material *green_50 = new Phong (Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
+    Material *red_50 = new Phong(Vector3D(0.7, 0.2, 0.3), Vector3D(0.6, 0.2, 0.2), 50);
+    Material* green_50 = new Phong(Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
+    Material* blue_50 = new Phong(Vector3D(0.2, 0.3, 0.7), Vector3D(0.2, 0.2, 0.6), 50);
 
 
     /* ******* */
@@ -54,17 +57,17 @@ void buildSceneSphere(Camera*& cam, Film*& film,
     // Define and place a sphere
     Matrix4x4 sphereTransform1;
     sphereTransform1 = sphereTransform1.translate(Vector3D(-.75, -0.5, 2 * std::sqrt(2.0)));
-    Shape* s1 = new Sphere(0.25, sphereTransform1, NULL);
+    Shape* s1 = new Sphere(0.25, sphereTransform1, green_50);
 
     // Define and place a sphere
     Matrix4x4 sphereTransform2;
     sphereTransform2 = sphereTransform2.translate(Vector3D(1.25, 0.0, 6));
-    Shape* s2 = new Sphere(1.25, sphereTransform2, NULL);
+    Shape* s2 = new Sphere(1.25, sphereTransform2, red_50);
 
     // Define and place a sphere
     Matrix4x4 sphereTransform3;
     sphereTransform3 = sphereTransform3.translate(Vector3D(1.0, -0.75, 3.5));
-    Shape* s3 = new Sphere(0.25, sphereTransform3, NULL);
+    Shape* s3 = new Sphere(0.25, sphereTransform3, blue_50);
 
     // Store the objects in the object list
     objectsList->push_back(s1);
@@ -93,8 +96,8 @@ void buildSceneSphere(Camera*& cam, Film*& film,
     PointLightSource pointLS2(lightPosition2, intensity);
     PointLightSource pointLS3(lightPosition3, intensity);
     lightSourceList->push_back(pointLS1);
-    //lightSourceList->push_back(pointLS2);
-    //lightSourceList->push_back(pointLS3);
+    lightSourceList->push_back(pointLS2);
+    lightSourceList->push_back(pointLS3);
 
     
 }
@@ -180,6 +183,7 @@ int main()
     Shader* intShader = new IntersectionShader(intersectionColor, bgColor); //TASK 2
     Shader* depthShader = new DepthShader(depthColor, maxDist, bgColor); //TASK 3
     Shader* normalShader = new NormalShader(depthColor, maxDist, bgColor); //TASK 4
+    Shader* directShader = new DirectShader(depthColor, maxDist, bgColor); //TASK 5
 
 
     // Build the scene---------------------------------------------------------
@@ -200,8 +204,8 @@ int main()
     // 
     //raytrace(cam, intShader, film, objectsList, lightSourceList); //TASK 2
     //raytrace(cam, depthShader, film, objectsList, lightSourceList); //TASK 3
-    raytrace(cam, normalShader, film, objectsList, lightSourceList); //TASK 4
-
+    //raytrace(cam, normalShader, film, objectsList, lightSourceList); //TASK 4
+    raytrace(cam, directShader, film, objectsList, lightSourceList); //TASK 5
     
 
     // Save the final result to file

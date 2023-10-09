@@ -43,29 +43,6 @@ bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape
     return intersection;
 }
 
-
-//bool Utils::getClosestIntersection(const Ray& cameraRay, const std::vector<Shape*>& objectsList, Intersection& its)
-//{
-//    const Shape* obj = objectsList.at(0);
-//    Intersection intersection;
-//
-//    for (size_t objIndex = 0; objIndex < objectsList.size(); objIndex++)
-//    {
-//        const Shape* obj = objectsList.at(objIndex);
-//
-//        if (obj->rayIntersect(cameraRay, intersection))
-//        {
-//            if ((intersection.itsPoint - cameraRay.o).length() > (its.itsPoint - cameraRay.o).length())
-//            {
-//                std::cout << "DISTANCE: " << (intersection.itsPoint - cameraRay.o).length() << std::endl;
-//                its = intersection;
-//            }
-//            return true;
-//        }
-//    }
-//    return false;
-//}
-
 double interpolate(double val, double y0, double x0, double y1, double x1 )
 {
     return (val-x0)*(y1-y0)/(x1-x0) + y0;
