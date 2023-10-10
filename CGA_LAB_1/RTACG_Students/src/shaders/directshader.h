@@ -14,6 +14,10 @@ public:
         const std::vector<Shape*>& objList,
         const std::vector<PointLightSource>& lsList) const;
 
+    Vector3D computeColorBasic(const Ray& r,
+        const std::vector<Shape*>& objList,
+        const std::vector<PointLightSource>& lsList) const;
+
 private:
     double maxDist;
     Vector3D hitColor;
