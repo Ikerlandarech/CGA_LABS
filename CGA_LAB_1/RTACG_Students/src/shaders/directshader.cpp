@@ -12,6 +12,40 @@ DirectShader::DirectShader(Vector3D hitColor_, double maxDist_, Vector3D bgColor
 Vector3D DirectShader::computeColor(const Ray& r, const std::vector<Shape*>& objList, const std::vector<PointLightSource>& lsList) const
 {
     Intersection intersection;
+    Vector3D color = Vector3D(0, 0, 0);
+    Vector3D n = intersection.normal;
+    Vector3D wo = (r.o - intersection.itsPoint).normalized();
+    if (intersection.shape->getMaterial().hasTransmission()) {
+        Vector3D l = r.d;
+        double nt = 1.1;
+        double sin2alf = 1 - pow(dot(l, n), 2);
+        double sqint = 1 - pow(nt, 2) * sin2alf;
+        //Checking Internal Reflection:
+        if ((sqint) >= 0)
+        {
+            Vector3D wt = (n.operator*(-sqrt(sqint) + nt*(dot(l, n))) + (l.operator*(nt))).normalized();
+            Ray refractionRay = Ray(intersection.itsPoint, wt, r.depth + 1);
+            color = computeColorBasic(refractionRay, objList, lsList);
+        }
+        else if ((sqint) < 0)
+        {
+            Vector3D wr = ((n.operator*(dot(n, r.d)) * 2.0) - r.d).normalized();
+            Ray reflectionRay = Ray(intersection.itsPoint, wr, r.depth + 1);
+            color = computeColorBasic(reflectionRay, objList, lsList);
+        }
+    }
+    else if (intersection.shape->getMaterial().hasSpecular())
+    {
+        Vector3D wr = ((n.operator*(dot(n, r.d)) * 2.0) - r.d).normalized();
+        Ray reflectionRay = Ray(intersection.itsPoint, wr, r.depth + 1);
+        color = computeColorBasic(reflectionRay, objList, lsList);
+    }
+    return bgColor;
+}
+
+Vector3D DirectShader::computeColorBasic(const Ray& r, const std::vector<Shape*>& objList, const std::vector<PointLightSource>& lsList) const
+{
+    Intersection intersection;
     Vector3D outputLight = Vector3D(0, 0, 0);
     if (Utils::getClosestIntersection(r, objList, intersection)) {
         bool visibility = false;
@@ -32,5 +66,4 @@ Vector3D DirectShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
         }
         return outputLight;
     }
-    return bgColor;
 }

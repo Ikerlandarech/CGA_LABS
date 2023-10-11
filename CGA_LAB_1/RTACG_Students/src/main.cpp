@@ -41,7 +41,7 @@ void buildSceneCornellBox(Camera*& cam, Film*& film,
     Material* greenDiffuse = new Phong(Vector3D(0.2, 0.7, 0.3), Vector3D(0, 0, 0), 100);
     Material* greyDiffuse = new Phong(Vector3D(0.8, 0.8, 0.8), Vector3D(0, 0, 0), 100);
     Material* blueDiffuse = new Phong(Vector3D(0.3, 0.2, 0.7), Vector3D(0, 0, 0), 100);
-    //Material* transmissive = new Transmissive(1.1);
+    //Material* transmissive = new Transmissive();
     //Material* mirror = new Mirror();
 
     Material* transmissive = new Phong(Vector3D(1, 1, 0.2), Vector3D(1, 1, 0.2), 20);
@@ -97,8 +97,6 @@ void buildSceneCornellBox(Camera*& cam, Film*& film,
     lightSourceList->push_back(pointLS2);
     lightSourceList->push_back(pointLS3);
 }
-
-
 
 void buildSceneSphere(Camera*& cam, Film*& film,
     std::vector<Shape*>*& objectsList,
@@ -269,7 +267,7 @@ int main()
     std::vector<Shape*>* objectsList;
     std::vector<PointLightSource>* lightSourceList;
     //Create Scene Geometry and Illumiantion
-    buildSceneCornellBox(cam, film, objectsList, lightSourceList);
+    buildSceneSphere(cam, film, objectsList, lightSourceList);
 
     //---------------------------------------------------------------------------
 
