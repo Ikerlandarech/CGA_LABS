@@ -13,34 +13,49 @@ Vector3D DirectShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
 {
     Intersection intersection;
     Vector3D color = Vector3D(0, 0, 0);
-    Vector3D n = intersection.normal;
-    Vector3D wo = (r.o - intersection.itsPoint).normalized();
-    if (intersection.shape->getMaterial().hasTransmission()) {
-        Vector3D l = r.d;
-        double nt = 1.1;
-        double sin2alf = 1 - pow(dot(l, n), 2);
-        double sqint = 1 - pow(nt, 2) * sin2alf;
-        //Checking Internal Reflection:
-        if ((sqint) >= 0)
-        {
-            Vector3D wt = (n.operator*(-sqrt(sqint) + nt*(dot(l, n))) + (l.operator*(nt))).normalized();
-            Ray refractionRay = Ray(intersection.itsPoint, wt, r.depth + 1);
-            color = computeColorBasic(refractionRay, objList, lsList);
+    if (Utils::getClosestIntersection(r, objList, intersection)) {
+        Vector3D n = intersection.normal;
+        //Vector3D wo = (r.o - intersection.itsPoint).normalized();
+        Vector3D wo = -r.d;
+        Vector3D l = wo;
+        if (intersection.shape->getMaterial().hasTransmission()) {
+            //std::cout << "Warning! " << "The value of sqint is: " << color << std::endl;
+            double nt = intersection.shape->getMaterial().getIndexOfRefraction();
+            if (dot(n, l) < 0)
+            {
+                n = -n;
+                nt = 1 / nt;
+            }
+            double sin2alf = 1 - pow(dot(l, n), 2);
+            double sqint = 1 - pow(nt, 2) * sin2alf;
+            //Checking Internal Reflection:
+            if ((sqint) >= 0)
+            {
+                Vector3D wt = (n.operator*(-sqrt(sqint) + nt * (dot(l, n))) + (l.operator*(nt))).normalized();
+                Ray refractionRay = Ray(intersection.itsPoint, wt, r.depth + 1);
+                color = computeColorBasic(refractionRay, objList, lsList);
+            }
+            else if ((sqint) < 0)
+            {
+                Vector3D wr = ((n.operator*(dot(n, l)) * 2.0) - l).normalized();
+                Ray reflectionRay = Ray(intersection.itsPoint, wr, r.depth + 1);
+                color = computeColorBasic(reflectionRay, objList, lsList);
+            }
         }
-        else if ((sqint) < 0)
+        else if (intersection.shape->getMaterial().hasSpecular())
         {
-            Vector3D wr = ((n.operator*(dot(n, r.d)) * 2.0) - r.d).normalized();
+
+            Vector3D wr = ((n.operator*(dot(n, l)) * 2.0) - l).normalized();
             Ray reflectionRay = Ray(intersection.itsPoint, wr, r.depth + 1);
             color = computeColorBasic(reflectionRay, objList, lsList);
+
         }
+        return color;
     }
-    else if (intersection.shape->getMaterial().hasSpecular())
+    else
     {
-        Vector3D wr = ((n.operator*(dot(n, r.d)) * 2.0) - r.d).normalized();
-        Ray reflectionRay = Ray(intersection.itsPoint, wr, r.depth + 1);
-        color = computeColorBasic(reflectionRay, objList, lsList);
+        return bgColor;
     }
-    return bgColor;
 }
 
 Vector3D DirectShader::computeColorBasic(const Ray& r, const std::vector<Shape*>& objList, const std::vector<PointLightSource>& lsList) const
