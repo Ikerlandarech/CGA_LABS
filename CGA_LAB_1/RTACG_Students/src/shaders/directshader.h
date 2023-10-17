@@ -3,7 +3,6 @@
 
 #include "shader.h"
 
-
 class DirectShader : public Shader
 {
 public:
@@ -11,10 +10,6 @@ public:
     DirectShader(Vector3D color_, double maxDist_, Vector3D bgColor_);
 
     Vector3D computeColor(const Ray& r,
-        const std::vector<Shape*>& objList,
-        const std::vector<PointLightSource>& lsList) const;
-
-    Vector3D computeColorBasic(const Ray& r,
         const std::vector<Shape*>& objList,
         const std::vector<PointLightSource>& lsList) const;
 

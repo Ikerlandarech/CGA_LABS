@@ -21,6 +21,7 @@
 #include "shaders/directshader.h"
 #include "materials/mirror.h"
 #include "materials/transmissive.h"
+#include "shaders/globalshader.h"
 
 
 void buildSceneCornellBox(Camera*& cam, Film*& film,
@@ -244,7 +245,8 @@ int main()
 
     // Create an empty film
     Film *film;
-    film = new Film(720, 512);
+    //film = new Film(720, 512);
+    film = new Film(1280, 720);
 
     // Declare the Intersection Shader
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
@@ -254,10 +256,11 @@ int main()
     // Declare the Depth Shader
     Vector3D depthColor(1, 0, 0);
 
-    Shader* intShader = new IntersectionShader(intersectionColor, bgColor); //TASK 2
-    Shader* depthShader = new DepthShader(depthColor, maxDist, bgColor); //TASK 3
-    Shader* normalShader = new NormalShader(depthColor, maxDist, bgColor); //TASK 4
-    Shader* directShader = new DirectShader(depthColor, maxDist, bgColor); //TASK 5
+    // Declare the ambient term "at"
+    Vector3D at = Vector3D(0.45);
+
+    Shader* directShader = new DirectShader(depthColor, maxDist, bgColor); //DIRECT ILLUMINATION
+    Shader* globalShader = new GlobalShader(depthColor, maxDist, bgColor, at); //GLOBAL ILLUMINATION
 
 
     // Build the scene---------------------------------------------------------
@@ -274,13 +277,9 @@ int main()
 
     //Paint Image ONLY TASK 1
     PaintImage(film);
-
-    // Launch some rays! TASK 2,3,...
-    // 
-    raytrace(cam, intShader, film, objectsList, lightSourceList); //TASK 2
-    raytrace(cam, depthShader, film, objectsList, lightSourceList); //TASK 3
-    raytrace(cam, normalShader, film, objectsList, lightSourceList); //TASK 4
-    raytrace(cam, directShader, film, objectsList, lightSourceList); //TASK 5
+    
+    //raytrace(cam, directShader, film, objectsList, lightSourceList); //DIRECT ILLUMINATION
+    raytrace(cam, globalShader, film, objectsList, lightSourceList); //GLOBAL ILLUMINATION
     
 
     // Save the final result to file

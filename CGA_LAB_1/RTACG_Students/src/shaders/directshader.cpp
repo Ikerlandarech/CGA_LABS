@@ -19,7 +19,6 @@ Vector3D DirectShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
         Vector3D wo = -r.d;
         Vector3D l = wo;
         if (intersection.shape->getMaterial().hasTransmission()) {
-            //std::cout << "Warning! " << "The value of sqint is: " << color << std::endl;
             double nt = intersection.shape->getMaterial().getIndexOfRefraction();
             if (dot(n, l) < 0)
             {
