@@ -257,7 +257,7 @@ int main()
     Vector3D depthColor(1, 0, 0);
 
     // Declare the ambient term "at"
-    Vector3D at = Vector3D(0.45);
+    Vector3D at = Vector3D(0.7);
 
     Shader* directShader = new DirectShader(depthColor, maxDist, bgColor); //DIRECT ILLUMINATION
     Shader* globalShader = new GlobalShader(depthColor, maxDist, bgColor, at); //GLOBAL ILLUMINATION

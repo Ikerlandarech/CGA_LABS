@@ -26,7 +26,7 @@ public:
     Vector3D d;          // Ray direction
     mutable double minT; //
     mutable double maxT; //
-    size_t depth;        // Ray depth (or number of bounces)
+    mutable size_t depth;        // Ray depth (or number of bounces)
 };
 
 std::ostream &operator<<(std::ostream &out, const Ray &r);
