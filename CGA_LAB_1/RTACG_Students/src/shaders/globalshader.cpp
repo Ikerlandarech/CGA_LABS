@@ -1,7 +1,7 @@
 #include "globalshader.h"
 #include "../core/utils.h"
 #include <math.h>
-#define N_DIRECTIONS 10
+#define N_DIRECTIONS 100
 #define N_BOUNCES 2
 
 GlobalShader::GlobalShader() :
@@ -92,9 +92,27 @@ Vector3D GlobalShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
                 }
                 indirIllumination = indirIllumination.operator*(coeff);
             }
-            else if (r.depth == 1)
+            else if (r.depth > 0)
             {
                 indirIllumination = intersection.shape->getMaterial().getDiffuseCoefficient() * at;
+            }
+            else if (r.depth == N_BOUNCES)
+            {
+                indirIllumination = intersection.shape->getMaterial().getDiffuseCoefficient() * at;
+            }
+            else
+            {
+                Vector3D coeff2 = (1.0 / (4.0 * M_PI));
+                Vector3D wr = (n * 2 * dot(wo, n) - wo);
+                Vector3D wn = n;
+
+                Ray rayWr = Ray(intersection.itsPoint, wr, r.depth + 1);
+                Ray rayWn = Ray(intersection.itsPoint, wn, r.depth + 1);
+                Vector3D lii = computeColor(rayWr, objList, lsList);
+                Vector3D rpi = intersection.shape->getMaterial().getReflectance(n, wo, wr);
+                Vector3D lin = computeColor(rayWn, objList, lsList);
+                Vector3D rpn = intersection.shape->getMaterial().getReflectance(n, wo, wn);
+                indirIllumination = (indirIllumination + (lii * rpi) + (lin + rpn)).operator*(coeff2);
             }
             color = dirIllumination + indirIllumination;
 
