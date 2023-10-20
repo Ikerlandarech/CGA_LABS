@@ -1,7 +1,7 @@
 #include "globalshader.h"
 #include "../core/utils.h"
 #include <math.h>
-#define N_DIRECTIONS 100
+#define N_DIRECTIONS 200
 #define N_BOUNCES 2
 
 GlobalShader::GlobalShader() :
@@ -20,7 +20,7 @@ Vector3D GlobalShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
     Vector3D indirIllumination = Vector3D(0, 0, 0);
     if (Utils::getClosestIntersection(r, objList, intersection)) {
         bool visibility = false;
-        Vector3D n = intersection.normal;
+        Vector3D n = intersection.normal.normalized();
         Vector3D wo = -r.d;
         Vector3D l = wo;
         //TRANSMISSIVE//
@@ -80,15 +80,23 @@ Vector3D GlobalShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
             }
             if (r.depth == 0)
             {
+                Intersection nintersection = Intersection();
                 Vector3D coeff = (1.0 / (N_DIRECTIONS * 2.0 * M_PI));
                 for (size_t i = 0; i < N_DIRECTIONS; i++)
                 {
                     HemisphericalSampler hs = HemisphericalSampler();
                     Vector3D wj = hs.getSample(n).normalized();
-                    Ray secondaryRay = Ray(intersection.itsPoint, wj, r.depth + 1);
-                    Vector3D li = computeColor(secondaryRay, objList, lsList);
-                    Vector3D rp = intersection.shape->getMaterial().getReflectance(n, wo, wj);
-                    indirIllumination += li * rp;
+                    for (size_t j = 0; j < N_BOUNCES; j++)
+                    {
+                        Ray secondaryRay = Ray(intersection.itsPoint, wj, r.depth + 1);
+                        Vector3D li = computeColor(secondaryRay, objList, lsList);
+                        Vector3D rp = intersection.shape->getMaterial().getReflectance(n, wo, wj);
+                        indirIllumination += li * rp;
+                        if (Utils::getClosestIntersection(secondaryRay, objList, nintersection))
+                        {
+                            wj = hs.getSample(nintersection.normal).normalized();
+                        }
+                    }
                 }
                 indirIllumination = indirIllumination.operator*(coeff);
             }
@@ -112,9 +120,9 @@ Vector3D GlobalShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
                 Vector3D rpi = intersection.shape->getMaterial().getReflectance(n, wo, wr);
                 Vector3D lin = computeColor(rayWn, objList, lsList);
                 Vector3D rpn = intersection.shape->getMaterial().getReflectance(n, wo, wn);
-                indirIllumination = (indirIllumination + (lii * rpi) + (lin + rpn)).operator*(coeff2);
+                indirIllumination = ((lii * rpi) + (lin + rpn)).operator*(coeff2);
             }
-            color = dirIllumination + indirIllumination;
+            color = dirIllumination + indirIllumination.operator*(3);
 
         }
         return color;

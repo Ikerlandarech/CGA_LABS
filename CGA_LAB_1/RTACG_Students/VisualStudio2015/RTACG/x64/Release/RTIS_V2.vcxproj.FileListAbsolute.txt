@@ -1,1 +1,2 @@
 C:\Users\ikerl\Documents\Github\CGA_LABS\CGA_LAB_1\RTACG_Students\VisualStudio2015\RTACG\x64\Release\RT_ACG.exe
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_1\RTACG_Students\VisualStudio2015\RTACG\x64\Release\RT_ACG.exe
