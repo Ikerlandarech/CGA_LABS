@@ -44,24 +44,10 @@ Application::Application(int window_width, int window_height, SDL_Window* window
 	camera->setPerspective(45.f, window_width/(float)window_height, 0.1f, 10000.f); //set the projection, we want to be perspective
 
 	{
-		//SceneNode* node = new VolumeNode("Visible node");
-  //      Volume* abdomen = new Volume();
-  //      Texture* abdotext = new Texture();
-  //      Mesh* auxiliarymesh = new Mesh();
-
-  //      auxiliarymesh->createCube();
-		//abdomen->loadPVM("data/volumes/CT-Abdomen.pvm");
-		//abdotext->create3DFromVolume(abdomen, GL_CLAMP_TO_EDGE);
-
-		//StandardMaterial* mat = new VolumeMaterial();
-		//mat->shader = Shader::Get("data/shaders/basic.vs", "data/shaders/volumeshader.fs");
-		//mat->texture = abdotext;
-		//node->material = mat;
-  //      node->mesh = auxiliarymesh;
-  //      node->model.scale(1, 1, 1);
-  //      node_list.push_back(node);
+		//***
 		VolumeNode* Volumenode = new VolumeNode("Volume Node");
 		node_list.push_back(Volumenode);
+		//***
 	}
 	
 	//hide the cursor

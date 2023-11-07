@@ -103,28 +103,28 @@ void VolumeMaterial::render(Mesh* mesh, Matrix44 model, Camera* camera)
 		//enable shader
 		shader->enable();
 
+		//upload material specific uniforms
+		setUniforms(camera, model);
+
 		//upload model
 		if (item_current == 0) {
 			setUniforms(camera, model);
 		}
 		else if (item_current == 1) {
-			setUniforms(camera, this->model_daisy);
+			setUniforms(camera, model_daisy);
 		}
 		else if (item_current == 2) {
-			setUniforms(camera, this->model_orange);
+			setUniforms(camera, model_orange);
 		}
 		else if (item_current == 3) {
-			setUniforms(camera, this->model_bonsai);
+			setUniforms(camera, model_bonsai);
 		}
 		else if (item_current == 4) {
-			setUniforms(camera, this->model_foot);
+			setUniforms(camera, model_foot);
 		}
 		else if (item_current == 5) {
-			setUniforms(camera, this->model_teapot);
+			setUniforms(camera, model_teapot);
 		}
-
-		//upload material specific uniforms
-		setUniforms(camera, model);
 
 		//do the draw call
 		mesh->render(GL_TRIANGLES);
@@ -142,9 +142,8 @@ void VolumeMaterial::setUniforms(Camera* camera, Matrix44 model)
 	Matrix44 invModel = model;
 	invModel.inverse();
 	Vector4 temp = invModel * Vector4(camera->eye, 1.0);
-	//upload node uniforms
 	shader->setUniform("u_viewprojection", camera->viewprojection_matrix);
-	shader->setUniform("u_camera_position", camera->eye);
+	shader->setUniform("u_camera_position", invModel * camera->eye);
 	shader->setUniform("u_model", model);
 	shader->setUniform("u_inverse_model", invModel);
 	shader->setUniform("u_time", Application::instance->time);
