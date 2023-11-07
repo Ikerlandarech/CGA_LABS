@@ -1,7 +1,7 @@
 #include "globalshader.h"
 #include "../core/utils.h"
 #include <math.h>
-#define N_DIRECTIONS 200
+#define N_DIRECTIONS 10
 #define N_BOUNCES 2
 
 GlobalShader::GlobalShader() :
@@ -60,7 +60,6 @@ Vector3D GlobalShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
             Vector3D wr = Utils::computeReflectionDirection(r.d, n);
             Ray reflectionRay = Ray(intersection.itsPoint, wr, r.depth);
             color = computeColor(reflectionRay, objList, lsList);
-
         }
         //PHONG//
         else if (intersection.shape->getMaterial().hasDiffuseOrGlossy())
@@ -80,23 +79,15 @@ Vector3D GlobalShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
             }
             if (r.depth == 0)
             {
-                Intersection nintersection = Intersection();
                 Vector3D coeff = (1.0 / (N_DIRECTIONS * 2.0 * M_PI));
                 for (size_t i = 0; i < N_DIRECTIONS; i++)
                 {
                     HemisphericalSampler hs = HemisphericalSampler();
                     Vector3D wj = hs.getSample(n).normalized();
-                    for (size_t j = 0; j < N_BOUNCES; j++)
-                    {
-                        Ray secondaryRay = Ray(intersection.itsPoint, wj, r.depth + 1);
-                        Vector3D li = computeColor(secondaryRay, objList, lsList);
-                        Vector3D rp = intersection.shape->getMaterial().getReflectance(n, wo, wj);
-                        indirIllumination += li * rp;
-                        if (Utils::getClosestIntersection(secondaryRay, objList, nintersection))
-                        {
-                            wj = hs.getSample(nintersection.normal).normalized();
-                        }
-                    }
+                    Ray secondaryRay = Ray(intersection.itsPoint, wj, r.depth + 1);
+                    Vector3D li = computeColor(secondaryRay, objList, lsList);
+                    Vector3D rp = intersection.shape->getMaterial().getReflectance(n, wo, wj);
+                    indirIllumination += li * rp;
                 }
                 indirIllumination = indirIllumination.operator*(coeff);
             }
@@ -123,7 +114,6 @@ Vector3D GlobalShader::computeColor(const Ray& r, const std::vector<Shape*>& obj
                 indirIllumination = ((lii * rpi) + (lin + rpn)).operator*(coeff2);
             }
             color = dirIllumination + indirIllumination.operator*(3);
-
         }
         return color;
     }
