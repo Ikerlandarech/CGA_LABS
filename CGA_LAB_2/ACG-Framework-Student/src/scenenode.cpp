@@ -72,7 +72,6 @@ VolumeNode::VolumeNode(const char* name)
 	newmesh->createCube();
 	this->mesh = newmesh;
 
-
 	//Creating all the volumes (Imgui combo)
 	Volume* vol_abdomen = new Volume();
 	vol_abdomen->loadPVM("data/volumes/CT-Abdomen.pvm");
