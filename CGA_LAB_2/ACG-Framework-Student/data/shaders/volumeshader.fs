@@ -21,7 +21,6 @@ void main(){
 	vec4 sample_color;
 
     for (int i=0; i<1000; ++i){
-        //sample_pos = (v_position + vec3(1.0))/2.0;
         d = texture(u_texture, (sample_pos + 1.0)/2.0).x; //ray_direction ->loop:volume sampling -- d=density
         sample_color = vec4(d,d,d,d); //color of the composition ->loop:classification
         sample_color.rgb *= sample_color.a; //Multiplying the colors by the opacity

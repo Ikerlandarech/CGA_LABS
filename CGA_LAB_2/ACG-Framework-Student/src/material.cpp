@@ -125,6 +125,9 @@ void VolumeMaterial::render(Mesh* mesh, Matrix44 model, Camera* camera)
 		else if (item_current == 5) {
 			setUniforms(camera, model_teapot);
 		}
+		else if (item_current == 6) {
+			setUniforms(camera, model_brain);
+		}
 
 		//do the draw call
 		mesh->render(GL_TRIANGLES);
@@ -158,7 +161,7 @@ void VolumeMaterial::setUniforms(Camera* camera, Matrix44 model)
 void VolumeMaterial::renderInMenu()
 {
 
-	const char* items[] = { "Abdomen", "Daisy", "Orange","Bonsai","Foot","Teapot" };
+	const char* items[] = {"Abdomen", "Daisy", "Orange", "Bonsai", "Foot", "Teapot", "Brain"};
 
 	if (item_current == 0) {
 		this->texture = texture_abdomen;
@@ -177,6 +180,9 @@ void VolumeMaterial::renderInMenu()
 	}
 	else if (item_current == 5) {
 		this->texture = texture_teapot;
+	}
+	else if (item_current == 6) {
+		this->texture = texture_brain;
 	}
 
 	ImGui::Combo("Choose the Volume", (int*)&item_current, items, IM_ARRAYSIZE(items));

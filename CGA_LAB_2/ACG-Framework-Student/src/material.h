@@ -22,6 +22,7 @@ public:
 	Texture* texture_daisy = NULL;
 	Texture* texture_orange = NULL;
 	Texture* texture_teapot = NULL;
+	Texture* texture_brain = NULL;
 
 	Matrix44 model_abdomen;
 	Matrix44 model_bonsai;
@@ -29,6 +30,7 @@ public:
 	Matrix44 model_daisy;
 	Matrix44 model_orange;
 	Matrix44 model_teapot;
+	Matrix44 model_brain;
 
 	virtual void setUniforms(Camera* camera, Matrix44 model) = 0;
 	virtual void render(Mesh* mesh, Matrix44 model, Camera * camera) = 0;

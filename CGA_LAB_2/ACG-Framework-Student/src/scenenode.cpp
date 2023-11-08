@@ -67,13 +67,13 @@ VolumeNode::VolumeNode(const char* name)
 	this->name = name;
 
 
-	//Mesh
+	//Creating the mesh:
 	Mesh* newmesh = new Mesh();
 	newmesh->createCube();
 	this->mesh = newmesh;
 
 
-	//Volumes
+	//Creating all the volumes (Imgui combo)
 	Volume* vol_abdomen = new Volume();
 	vol_abdomen->loadPVM("data/volumes/CT-Abdomen.pvm");
 	Volume* vol_foot = new Volume();
@@ -86,16 +86,18 @@ VolumeNode::VolumeNode(const char* name)
 	vol_daisy->loadPVM("data/volumes/Daisy.pvm");
 	Volume* vol_orange = new Volume();
 	vol_orange->loadPVM("data/volumes/Orange.pvm");
+	Volume* vol_brain = new Volume();
+	vol_brain->loadVL("data/volumes/brain.vl");
 
 
-	//Model
+	//Model fit:
 	float x = vol_abdomen->width * vol_abdomen->widthSpacing;
 	float y = (vol_abdomen->height * vol_abdomen->heightSpacing) / x;
 	float z = (vol_abdomen->depth * vol_abdomen->depthSpacing) / x;
 	this->model.scale(1.0, y, z);
 
 
-	//Texture
+	//Creating the textures:
 	Texture* text_abdomen = new Texture();
 	text_abdomen->create3DFromVolume(vol_abdomen, GL_CLAMP_TO_EDGE);
 	Texture* text_foot = new Texture();
@@ -108,9 +110,11 @@ VolumeNode::VolumeNode(const char* name)
 	text_daisy->create3DFromVolume(vol_daisy, GL_CLAMP_TO_EDGE);
 	Texture* text_orange = new Texture();
 	text_orange->create3DFromVolume(vol_orange, GL_CLAMP_TO_EDGE);
+	Texture* text_brain = new Texture();
+	text_brain->create3DFromVolume(vol_brain, GL_CLAMP_TO_EDGE);
 
 
-	//Material
+	//Assigning all textures to the volume material:
 	VolumeMaterial* vol_mat = new VolumeMaterial();
 	this->material = vol_mat;
 	vol_mat->texture = text_abdomen;
@@ -121,9 +125,10 @@ VolumeNode::VolumeNode(const char* name)
 	vol_mat->texture_bonsai = text_bonsai;
 	vol_mat->texture_daisy = text_daisy;
 	vol_mat->texture_orange = text_orange;
+	vol_mat->texture_brain = text_brain;
 
 
-	//model material
+	//Changing all model material for each model:
 	x = vol_abdomen->width * vol_abdomen->widthSpacing;
 	y = (vol_abdomen->height * vol_abdomen->heightSpacing) / x;
 	z = (vol_abdomen->depth * vol_abdomen->depthSpacing) / x;
@@ -152,6 +157,11 @@ VolumeNode::VolumeNode(const char* name)
 	x = vol_orange->width * vol_orange->widthSpacing;
 	y = (vol_orange->height * vol_orange->heightSpacing) / x;
 	z = (vol_orange->depth * vol_orange->depthSpacing) / x;
+	vol_mat->model_orange.scale(1.0, y, z);
+
+	x = vol_brain->width * vol_brain->widthSpacing;
+	y = (vol_brain->height * vol_brain->heightSpacing) / x;
+	z = (vol_brain->depth * vol_brain->depthSpacing) / x;
 	vol_mat->model_orange.scale(1.0, y, z);
 
 }
