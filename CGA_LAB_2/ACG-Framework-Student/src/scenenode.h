@@ -38,6 +38,10 @@ public:
 	VolumeNode();
 	VolumeNode(const char* name);
 	~VolumeNode();
+
+	virtual void render(Camera* camera);
+	virtual void renderVolume(Camera* camera);
+	virtual void renderInMenu();
 };
 
 #endif

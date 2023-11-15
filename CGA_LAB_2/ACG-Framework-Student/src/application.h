@@ -33,6 +33,8 @@ public:
 	bool render_debug;
 	bool autorotate;
 
+	//Matrix44 model;
+
 	// some vars
 	static Camera* camera; //our GLOBAL camera
 	bool mouse_locked; //tells if the mouse is locked (not seen)
