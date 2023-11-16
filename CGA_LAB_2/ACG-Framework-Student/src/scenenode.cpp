@@ -18,7 +18,7 @@ SceneNode::SceneNode(const char * name)
 
 SceneNode::~SceneNode()
 {
-
+	
 }
 
 void SceneNode::render(Camera* camera)

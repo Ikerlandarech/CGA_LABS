@@ -3,55 +3,79 @@
   material.cpp
   scenenode.cpp
   utils.cpp
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\material.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\material.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\material.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\material.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\scenenode.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\application.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\application.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\application.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\application.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(68): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(70): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(76): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(77): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(78): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\main.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,109): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,100): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,91): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\framework.h(177,82): warning C4244: 'argument': conversion from 'float' to 'unsigned char', possible loss of data (compiling source file ..\..\src\utils.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(68): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\application.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(70): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\application.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(76): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\src\application.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(77): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\application.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(78): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\application.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(68): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(70): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(76): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(77): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(78): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(334,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(335,63): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(68): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\main.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(70): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\main.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(360,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(76): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\src\main.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(77): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\main.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(78): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\main.cpp)
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(370,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(68): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\material.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(70): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\material.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(76): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\src\material.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(77): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\material.cpp)
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(78): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\material.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(68): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(70): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(76): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(77): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(78): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\scenenode.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(68): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(70): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(76): warning C4305: 'argument': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(77): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.h(78): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\src\utils.cpp)
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(144,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(170,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(171,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(174,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(177,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(257,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(213,61): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(256,13): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(257,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(258,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(268,13): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(269,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(270,21): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(280,13): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(281,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(282,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(334,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(292,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(335,63): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(294,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(304,13): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(305,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(306,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(360,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(316,14): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(317,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(318,22): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(370,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(392,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(394,17): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\utils.cpp(407,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -93,30 +117,6 @@ C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\u
           [
               _Ty=float
           ]
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(144,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(170,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(171,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(174,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(177,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\application.cpp(257,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(214,61): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(253,13): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(254,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(255,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(265,13): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(266,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(267,21): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(277,13): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(278,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(279,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(289,15): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(291,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(301,13): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(302,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(303,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(313,14): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(314,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\material.cpp(315,22): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\main.cpp(142,46): warning C4244: '=': conversion from 'Sint32' to 'float', possible loss of data
 C:\Users\Usuario\Documents\GitHub\CGA_LABS\CGA_LAB_2\ACG-Framework-Student\src\main.cpp(184,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 animation.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification

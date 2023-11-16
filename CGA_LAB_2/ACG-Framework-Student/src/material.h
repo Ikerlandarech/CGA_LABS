@@ -74,8 +74,10 @@ public:
 	bool clipping = false;
 	bool isosurface = false;
 	vec4 plane_clipping = vec4(0.0, 0.0, -0.9, 0.0);
-	float gradient_threshold = 0.3;
+	float gradient_threshold = 0.4;
 	float h = 0.015;
+	vec3 u_color = vec3(1.0, 1.0, 1.0);
+
 	vec3 light_position = vec3(1.0, 3.0, 5.0);
 	vec3 ambient_light = vec3(1.0, 1.0, 1.0);
 	vec3 diffuse_light = vec3(1.0, 1.0, 1.0);
@@ -96,6 +98,12 @@ public:
 	void bonsaiPreset();
 	void footPreset();
 	void teapotPreset();
+	void abdomenIsoPreset();
+	void daisyIsoPreset();
+	void orangeIsoPreset();
+	void bonsaiIsoPreset();
+	void footIsoPreset();
+	void teapotIsoPreset();
 
 };
 #endif

@@ -155,7 +155,7 @@ void VolumeMaterial::setUniforms(Camera* camera, Matrix44 model)
 	shader->setUniform("u_model", model);
 	shader->setUniform("u_inverse_model", invModel);
 	shader->setUniform("u_time", Application::instance->time);
-	shader->setUniform("u_color", color);
+	shader->setUniform("u_color", u_color);
 	shader->setUniform("alpha_discard", alpha_discard);
 	shader->setUniform("u_step", step);
 	shader->setUniform("u_brightness", brightness);
@@ -165,6 +165,7 @@ void VolumeMaterial::setUniforms(Camera* camera, Matrix44 model)
 	shader->setUniform("TF", TF_texture);
 	shader->setUniform("clipping", clipping);
 	shader->setUniform("plane_clipping", plane_clipping);
+	shader->setUniform("isosurface", isosurface);
 	shader->setUniform("gradient_threshold", gradient_threshold);
 	shader->setUniform("h", h);
 
@@ -207,7 +208,7 @@ if (item_current >= 0 && item_current < 6) {
 
 	ImGui::Combo("Choose the Volume", (int*)&item_current, items, IM_ARRAYSIZE(items));
 
-	ImGui::ColorEdit3("Color", (float*)&color); // Edit 3 floats representing a color
+	ImGui::ColorEdit3("Color", (float*)&u_color); // Edit 3 floats representing a color
 	ImGui::SliderFloat("Step", &step, 0.0, 1.0);
 	ImGui::SliderFloat("Brightness", &brightness, 0, 10);
 	ImGui::SliderFloat("Alpha Discard", &alpha_discard, 0, 0.15);
@@ -220,7 +221,7 @@ if (item_current >= 0 && item_current < 6) {
 	ImGui::SliderFloat("Slider Clipping W", &plane_clipping.w, -1, 1);
 	ImGui::Checkbox("Isosurface", &isosurface);
 	ImGui::SliderFloat("Gradient Threshold", &gradient_threshold, 0.0, 1.0);
-	ImGui::SliderFloat("h", &h, 0.0, 5.0);
+	ImGui::SliderFloat("h", &h, 0.0, 1.0);
 	ImGui::DragFloat3("Light position", (float*)&light_position, 0.1f);
 
 	if (ImGui::Button("Abdomen Preset")) {
@@ -241,12 +242,31 @@ if (item_current >= 0 && item_current < 6) {
 	if (ImGui::Button("Teapot Preset")) {
 		teapotPreset();
 	}
+	if (ImGui::Button("Abdomen Isosurface Preset")) {
+		abdomenIsoPreset();
+	}
+	if (ImGui::Button("Daisy Isosurface Preset")) {
+		daisyIsoPreset();
+	}
+	if (ImGui::Button("Orange Isosurface Preset")) {
+		orangeIsoPreset();
+	}
+	if (ImGui::Button("Bonsai Isosurface Preset")) {
+		bonsaiIsoPreset();
+	}
+	if (ImGui::Button("Foot Isosurface Preset")) {
+		footIsoPreset();
+	}
+	if (ImGui::Button("Teapot Isosurface Preset")) {
+		teapotIsoPreset();
+	}
 }
 
 //PRESETS:
 void VolumeMaterial::abdomenPreset()
 {
-	plane_clipping.x = 1.0;
+	isosurface = false;
+	plane_clipping.x = 0.0;
 	plane_clipping.y = 0.0;
 	plane_clipping.z = 1.0;
 	plane_clipping.w = -1.0;
@@ -262,6 +282,11 @@ void VolumeMaterial::abdomenPreset()
 
 void VolumeMaterial::daisyPreset()
 {
+	isosurface = false;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
 	jittering_2 = true;
 	transfer = true;
 	clipping = true;
@@ -274,6 +299,11 @@ void VolumeMaterial::daisyPreset()
 
 void VolumeMaterial::orangePreset()
 {
+	isosurface = false;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
 	jittering_2 = true;
 	transfer = true;
 	clipping = true;
@@ -286,6 +316,11 @@ void VolumeMaterial::orangePreset()
 
 void VolumeMaterial::bonsaiPreset()
 {
+	isosurface = false;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
 	jittering_2 = true;
 	transfer = true;
 	clipping = true;
@@ -298,22 +333,147 @@ void VolumeMaterial::bonsaiPreset()
 
 void VolumeMaterial::footPreset()
 {
+	isosurface = false;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
 	jittering_2 = true;
 	transfer = true;
 	clipping = true;
 	step = 0.02;
 	brightness = 6.2;
-	alpha_discard = 0.085;
+	alpha_discard = 0.09;
 	text_current = 4;
 	item_current = 4;
 }
 
 void VolumeMaterial::teapotPreset()
 {
+	isosurface = false;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
 	jittering_2 = true;
 	transfer = true;
 	clipping = true;
-	step = 0.217;
+	step = 0.035;
+	brightness = 10;
+	alpha_discard = 0.035;
+	text_current = 5;
+	item_current = 5;
+}
+
+//ISOSURFACES:
+void VolumeMaterial::abdomenIsoPreset()
+{
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
+	isosurface = true;
+	u_color = vec3(0.0, 0.059, 1.0);
+	gradient_threshold = 0.402;
+	jittering_2 = true;
+	transfer = false;
+	clipping = true;
+	step = 0.02;
+	brightness = 1.73;
+	alpha_discard = 0.150;
+	text_current = 0;
+	item_current = 0;
+}
+
+void VolumeMaterial::daisyIsoPreset()
+{
+	isosurface = true;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
+	u_color = vec3(0.088, 0.0, 1.0);
+	gradient_threshold = 0.185;
+	jittering_2 = true;
+	transfer = true;
+	clipping = true;
+	step = 0.02;
+	brightness = 6.2;
+	alpha_discard = 0.1;
+	text_current = 1;
+	item_current = 1;
+}
+
+void VolumeMaterial::orangeIsoPreset()
+{
+	isosurface = true;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
+	u_color = vec3(1.0, 0.059, 0.0);
+	gradient_threshold = 0.211;
+	jittering_2 = true;
+	transfer = true;
+	clipping = true;
+	step = 0.02;
+	brightness = 6.2;
+	alpha_discard = 0.123;
+	text_current = 2;
+	item_current = 2;
+}
+
+void VolumeMaterial::bonsaiIsoPreset()
+{
+	isosurface = true;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
+	u_color = vec3(0.0, 0.059, 1.0);
+	gradient_threshold = 0.236;
+	jittering_2 = true;
+	transfer = true;
+	clipping = true;
+	step = 0.0373;
+	brightness = 7.5;
+	alpha_discard = 0.085;
+	text_current = 3;
+	item_current = 3;
+}
+
+void VolumeMaterial::footIsoPreset()
+{
+	isosurface = true;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
+	u_color = vec3(0.0, 0.059, 1.0);
+	gradient_threshold = 0.421;
+	jittering_2 = true;
+	transfer = true;
+	clipping = true;
+	step = 0.02;
+	brightness = 6.2;
+	alpha_discard = 0.150;
+	text_current = 4;
+	item_current = 4;
+}
+
+void VolumeMaterial::teapotIsoPreset()
+{
+	isosurface = true;
+	plane_clipping.x = 0.0;
+	plane_clipping.y = 0.0;
+	plane_clipping.z = 1.0;
+	plane_clipping.w = -1.0;
+	u_color = vec3(0.059, 0.0, 1.0);
+	gradient_threshold = 0.148;
+	jittering_2 = true;
+	transfer = true;
+	clipping = true;
+	step = 0.004;
 	brightness = 7.3;
 	alpha_discard = 0.05;
 	text_current = 5;
