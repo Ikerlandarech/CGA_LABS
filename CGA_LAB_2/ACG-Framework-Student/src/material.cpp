@@ -373,7 +373,7 @@ void VolumeMaterial::abdomenIsoPreset()
 	plane_clipping.z = 1.0;
 	plane_clipping.w = -1.0;
 	isosurface = true;
-	u_color = vec3(0.0, 0.059, 1.0);
+	u_color = vec4(0.0, 0.059, 1.0, 1.0);
 	gradient_threshold = 0.402;
 	jittering_2 = true;
 	transfer = false;
@@ -392,7 +392,7 @@ void VolumeMaterial::daisyIsoPreset()
 	plane_clipping.y = 0.0;
 	plane_clipping.z = 1.0;
 	plane_clipping.w = -1.0;
-	u_color = vec3(0.088, 0.0, 1.0);
+	u_color = vec4(0.088, 0.0, 1.0, 1.0);
 	gradient_threshold = 0.185;
 	jittering_2 = true;
 	transfer = true;
@@ -411,7 +411,7 @@ void VolumeMaterial::orangeIsoPreset()
 	plane_clipping.y = 0.0;
 	plane_clipping.z = 1.0;
 	plane_clipping.w = -1.0;
-	u_color = vec3(1.0, 0.059, 0.0);
+	u_color = vec4(1.0, 0.059, 0.0, 1.0);
 	gradient_threshold = 0.211;
 	jittering_2 = true;
 	transfer = true;
@@ -430,7 +430,7 @@ void VolumeMaterial::bonsaiIsoPreset()
 	plane_clipping.y = 0.0;
 	plane_clipping.z = 1.0;
 	plane_clipping.w = -1.0;
-	u_color = vec3(0.0, 0.059, 1.0);
+	u_color = vec4(0.0, 0.059, 1.0, 1.0);
 	gradient_threshold = 0.236;
 	jittering_2 = true;
 	transfer = true;
@@ -449,7 +449,7 @@ void VolumeMaterial::footIsoPreset()
 	plane_clipping.y = 0.0;
 	plane_clipping.z = 1.0;
 	plane_clipping.w = -1.0;
-	u_color = vec3(0.0, 0.059, 1.0);
+	u_color = vec4(0.0, 0.059, 1.0, 1.0);
 	gradient_threshold = 0.421;
 	jittering_2 = true;
 	transfer = true;
@@ -468,7 +468,7 @@ void VolumeMaterial::teapotIsoPreset()
 	plane_clipping.y = 0.0;
 	plane_clipping.z = 1.0;
 	plane_clipping.w = -1.0;
-	u_color = vec3(0.059, 0.0, 1.0);
+	u_color = vec4(0.059, 0.0, 1.0, 1.0);
 	gradient_threshold = 0.148;
 	jittering_2 = true;
 	transfer = true;

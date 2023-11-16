@@ -5,7 +5,7 @@ uniform vec3 u_camera_position;
 uniform mat4 u_model;
 uniform mat4 u_inverse_model;
 uniform float u_time;
-uniform vec3 u_color;
+uniform vec4 u_color;
 uniform float alpha_discard;
 
 uniform float u_step;
@@ -38,7 +38,7 @@ float rand(vec2 co){ //jittering pseudorandom-looking function.
 //Computing the Phong lighting model for a given normal vector and texture position:
 vec3 phong(vec3 v_normal, vec3 s_position_text) {
     //Reading the pixel RGBA from the texture at position v_uv:
-    vec4 color = vec4(u_color, 1.0);
+    vec4 color = u_color;
 
     //Normalizing the surface normal vector:
     vec3 N = normalize(v_normal);
@@ -161,7 +161,7 @@ void main(){
 					final_color = aux_color;
 			}
             else {
-				final_color += u_step * (1.0 - final_color.a) * sample_color;
+				final_color += u_step * (1.0 - final_color.a) * sample_color * u_color;
 			}
 		}
 
@@ -171,7 +171,7 @@ void main(){
 				final_color = aux_color;
 			}
             else {
-				final_color += u_step * (1.0 - final_color.a) * sample_color;
+				final_color += u_step * (1.0 - final_color.a) * sample_color * u_color;
 			}
 		}
 
