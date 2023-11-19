@@ -74,36 +74,33 @@ vec3 phong(vec3 v_normal, vec3 s_position_text) {
     return I;
 }
 
-vec3 gradient(vec3 s_position_tex){ //gradient perpendicular to the isosurfaces.
+//Gradient Function:
+vec3 gradient(vec3 s_position_tex) {
 
-	//First we define the positions in the x, y, and z directions with a small offset 'h'.
-	vec3 xh1 = vec3(s_position_tex.x + h, s_position_tex.y, s_position_tex.z);
-	vec3 xh2 = vec3(s_position_tex.x - h, s_position_tex.y, s_position_tex.z);
-	vec3 yh1 = vec3(s_position_tex.x, s_position_tex.y+h, s_position_tex.z);
-	vec3 yh2 = vec3(s_position_tex.x, s_position_tex.y-h, s_position_tex.z);
-	vec3 zh1 = vec3(s_position_tex.x, s_position_tex.y, s_position_tex.z + h);
-	vec3 zh2 = vec3(s_position_tex.x, s_position_tex.y, s_position_tex.z - h);
-	
-	//Sample intensity values at the defined positions:
-	float i_xh1 = texture3D(u_texture, xh1).x;
-	float i_xh2 = texture3D(u_texture, xh2).x;
-	float i_yh1 = texture3D(u_texture, yh1).y;
-	float i_yh2 = texture3D(u_texture, yh2).y;
-	float i_zh1 = texture3D(u_texture, zh1).z;
-	float i_zh2 = texture3D(u_texture, zh2).z;
+    vec3 gradient = vec3(0.0, 0.0, 0.0);
 
-	//Computing the intensity differences in each direction:
-	float i_xh = i_xh1 - i_xh2;
-	float i_yh = i_yh1 - i_yh2;
-	float i_zh = i_zh1 - i_zh2;
-	
-	//Computing the gradient vector and normalizing it:
-	vec3 gradient = vec3(i_xh, i_yh, i_zh) / (2.0 * h);
-	gradient = normalize(gradient);
-	vec3 normal = 1.0 - gradient;
+    //Computing the partial derivatives in x,y,z directions:
+    float dx0 = texture(u_texture, s_position_tex + vec3(h, 0.0, 0.0)).x;
+    float dx1 = texture(u_texture, s_position_tex + vec3(-h, 0.0, 0.0)).x;
+    float dy0 = texture(u_texture, s_position_tex + vec3(0.0, h, 0.0)).x;
+    float dy1 = texture(u_texture, s_position_tex + vec3(0.0, -h, 0.0)).x;
+    float dz0 = texture(u_texture, s_position_tex + vec3(0.0, 0.0, h)).x;
+    float dz1 = texture(u_texture, s_position_tex + vec3(0.0, 0.0, -h)).x;
 
-	return normal;
+    //Computing the gradient components using central differences:
+    gradient.x = (dx0 - dx1) / (2.0 * h);
+    gradient.y = (dy0 - dy1) / (2.0 * h);
+    gradient.z = (dz0 - dz1) / (2.0 * h);
+
+    //Normalizing the gradient vector so that it is a unit vector:
+    gradient = normalize(gradient);
+
+    //Inverting the gradient to obtain the surface normal:
+    vec3 normal = 1.0 - gradient;
+
+    return normal;
 }
+
 
 void main(){
     vec3 r_dir = normalize(v_position - (u_inverse_model * vec4(u_camera_position, 1.0)).xyz); //ray dir

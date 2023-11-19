@@ -87,14 +87,14 @@ VolumeMaterial::VolumeMaterial()
 {
 	color = vec4(1.f, 1.f, 1.f, 1.f);
 	shader = Shader::Get("data/shaders/basic.vs", "data/shaders/volumeshader.fs");
-	noise_texture = Texture::Get("data/images/blueNoise.png");
-	TF_texture = Texture::Get("data/images/TF_abdomen.png");
-	TF_abdomen = Texture::Get("data/images/TF_abdomen.png");
-	TF_foot = Texture::Get("data/images/TF_foot.png");
-	TF_orange = Texture::Get("data/images/TF_orange.png");
-	TF_daisy = Texture::Get("data/images/TF_daisy.png");
-	TF_bonsai = Texture::Get("data/images/TF_bonsai.png");
-	TF_teapot = Texture::Get("data/images/TF_teapot.png");
+	noise_texture = Texture::Get("data/images/blueNoise.png", true, GL_CLAMP_TO_EDGE);
+	TF_texture = Texture::Get("data/images/TF_abdomen.png", true, GL_CLAMP_TO_EDGE);
+	TF_abdomen = Texture::Get("data/images/TF_abdomen.png", true, GL_CLAMP_TO_EDGE);
+	TF_foot = Texture::Get("data/images/TF_foot.png", true, GL_CLAMP_TO_EDGE);
+	TF_orange = Texture::Get("data/images/TF_orange.png", true, GL_CLAMP_TO_EDGE);
+	TF_daisy = Texture::Get("data/images/TF_daisy.png", true, GL_CLAMP_TO_EDGE);
+	TF_bonsai = Texture::Get("data/images/TF_bonsai.png", true, GL_CLAMP_TO_EDGE);
+	TF_teapot = Texture::Get("data/images/TF_teapot.png", true, GL_CLAMP_TO_EDGE);
 }
 
 VolumeMaterial::~VolumeMaterial()
@@ -168,7 +168,6 @@ void VolumeMaterial::setUniforms(Camera* camera, Matrix44 model)
 	shader->setUniform("isosurface", isosurface);
 	shader->setUniform("gradient_threshold", gradient_threshold);
 	shader->setUniform("h", h);
-
 	shader->setUniform("ambient_light", ambient_light);
 	shader->setUniform("diffuse_light", diffuse_light);
 	shader->setUniform("specular_light", specular_light);
@@ -265,6 +264,7 @@ if (item_current >= 0 && item_current < 6) {
 //PRESETS:
 void VolumeMaterial::abdomenPreset()
 {
+	u_color = vec4(1.0, 1.0, 1.0, 1.0);
 	isosurface = false;
 	plane_clipping.x = 0.0;
 	plane_clipping.y = 0.0;
@@ -282,6 +282,7 @@ void VolumeMaterial::abdomenPreset()
 
 void VolumeMaterial::daisyPreset()
 {
+	u_color = vec4(1.0, 1.0, 1.0, 1.0);
 	isosurface = false;
 	plane_clipping.x = 0.0;
 	plane_clipping.y = 0.0;
@@ -299,6 +300,7 @@ void VolumeMaterial::daisyPreset()
 
 void VolumeMaterial::orangePreset()
 {
+	u_color = vec4(1.0, 1.0, 1.0, 1.0);
 	isosurface = false;
 	plane_clipping.x = 0.0;
 	plane_clipping.y = 0.0;
@@ -316,6 +318,7 @@ void VolumeMaterial::orangePreset()
 
 void VolumeMaterial::bonsaiPreset()
 {
+	u_color = vec4(1.0, 1.0, 1.0, 1.0);
 	isosurface = false;
 	plane_clipping.x = 0.0;
 	plane_clipping.y = 0.0;
@@ -333,6 +336,7 @@ void VolumeMaterial::bonsaiPreset()
 
 void VolumeMaterial::footPreset()
 {
+	u_color = vec4(1.0, 1.0, 1.0, 1.0);
 	isosurface = false;
 	plane_clipping.x = 0.0;
 	plane_clipping.y = 0.0;
@@ -350,6 +354,7 @@ void VolumeMaterial::footPreset()
 
 void VolumeMaterial::teapotPreset()
 {
+	u_color = vec4(1.0, 1.0, 1.0, 1.0);
 	isosurface = false;
 	plane_clipping.x = 0.0;
 	plane_clipping.y = 0.0;
@@ -365,7 +370,7 @@ void VolumeMaterial::teapotPreset()
 	item_current = 5;
 }
 
-//ISOSURFACES:
+//ISOSURFACES PRESETS:
 void VolumeMaterial::abdomenIsoPreset()
 {
 	plane_clipping.x = 0.0;
@@ -383,6 +388,7 @@ void VolumeMaterial::abdomenIsoPreset()
 	alpha_discard = 0.150;
 	text_current = 0;
 	item_current = 0;
+	float h = 0.015;
 }
 
 void VolumeMaterial::daisyIsoPreset()
@@ -402,6 +408,7 @@ void VolumeMaterial::daisyIsoPreset()
 	alpha_discard = 0.1;
 	text_current = 1;
 	item_current = 1;
+	float h = 0.015;
 }
 
 void VolumeMaterial::orangeIsoPreset()
@@ -421,6 +428,7 @@ void VolumeMaterial::orangeIsoPreset()
 	alpha_discard = 0.123;
 	text_current = 2;
 	item_current = 2;
+	float h = 0.015;
 }
 
 void VolumeMaterial::bonsaiIsoPreset()
@@ -440,6 +448,7 @@ void VolumeMaterial::bonsaiIsoPreset()
 	alpha_discard = 0.085;
 	text_current = 3;
 	item_current = 3;
+	float h = 0.015;
 }
 
 void VolumeMaterial::footIsoPreset()
@@ -459,6 +468,7 @@ void VolumeMaterial::footIsoPreset()
 	alpha_discard = 0.150;
 	text_current = 4;
 	item_current = 4;
+	float h = 0.015;
 }
 
 void VolumeMaterial::teapotIsoPreset()
@@ -478,4 +488,5 @@ void VolumeMaterial::teapotIsoPreset()
 	alpha_discard = 0.05;
 	text_current = 5;
 	item_current = 5;
+	float h = 0.015;
 }
